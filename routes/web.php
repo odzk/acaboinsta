@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', 'HomeController@index')->name('dashboard');
+Route::get('logout', 'HomeController@logout');
+
+Route::get('glogin',array('as'=>'glogin','uses'=>'UserController@googleLogin')) ;
+
+Auth::routes();
